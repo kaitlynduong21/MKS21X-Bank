@@ -1,4 +1,4 @@
-public class BankAccount {
+  public class BankAccount {
 
   private double balance;
   private int accountID;
@@ -27,7 +27,7 @@ public class BankAccount {
   }
 
   public boolean deposit(double depo) {
-    if (depo >= 0.0) {
+    if (depo >= 0) {
       balance += depo;
       return true;
     } else {
@@ -35,7 +35,7 @@ public class BankAccount {
     }
   }
 
-  public boolean withdrawal(double money) {
+  public boolean withdraw(double money) {
     if (money <= balance) {
       balance -= money;
       return true;
@@ -46,18 +46,38 @@ public class BankAccount {
 
   public static void main(String[]args){
 
-		BankAccount a = new BankAccount(3202.98, 100309, "cool");
+  	BankAccount a = new BankAccount(3202.98, 100309, "cool");
+
     System.out.println("The ID of my bank account is " +a.getAccountID() + ". It has a balance of "+a.getBalance() + ".");
     System.out.println(a);
     a.setPassword("hi123");
-    System.out.println(a.deposit(412.09));
-    System.out.println("My new balance is " + a.getBalance() + ".");
-    System.out.println(a.deposit(-52.09));
-    System.out.println(a.withdrawal(412.09));
-    System.out.println("My new balance is " + a.getBalance() + ".");
-    System.out.println(a.withdrawal(5000.00));
 
+    if(a.deposit(512.95)){
+      System.out.println("Deposit success!");
+    } else {
+      System.out.println("Deposit failure");
+    }
+
+    System.out.println("My new balance is " + a.getBalance() + ".");
+
+    if(a.deposit(-67.98)){
+      System.out.println("Deposit success!");
+    } else {
+      System.out.println("Deposit failure");
+    }
+
+    if(a.withdraw(234.29) ){
+      System.out.println("Withdrawal success!");
+    } else {
+      System.out.println("Withdrawal failure");
+    }
+
+    if(a.withdraw(5000.00) ){
+      System.out.println("Withdrawal success!");
+    } else {
+      System.out.println("Withdrawal failure");
+    }
+
+    System.out.println("My new balance is " + a.getBalance() + ".");
   }
-
-
-}
+  }
