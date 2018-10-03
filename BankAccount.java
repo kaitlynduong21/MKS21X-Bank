@@ -26,13 +26,18 @@ public class BankAccount {
     password = str;
   }
 
-  //public void setBalance(double money) {
-  //balance += money;
-  //}
-
   public boolean deposit(double depo) {
     if (depo >= 0.0) {
       balance += depo;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public boolean withdrawal(double money) {
+    if (money <= balance) {
+      balance -= money;
       return true;
     } else {
       return false;
@@ -45,9 +50,12 @@ public class BankAccount {
     System.out.println("The ID of my bank account is " +a.getAccountID() + ". It has a balance of "+a.getBalance() + ".");
     System.out.println(a);
     a.setPassword("hi123");
-    a.deposit(412.09);
+    System.out.println(a.deposit(412.09));
     System.out.println("My new balance is " + a.getBalance() + ".");
-    a.deposit(-52.09);
+    System.out.println(a.deposit(-52.09));
+    System.out.println(a.withdrawal(412.09));
+    System.out.println("My new balance is " + a.getBalance() + ".");
+    System.out.println(a.withdrawal(5000.00));
 
   }
 
