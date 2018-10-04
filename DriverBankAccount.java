@@ -14,6 +14,7 @@ public class DriverBankAccount{
       } else {
         System.out.println("Transfer failure");
       }
+    System.out.println();
 
     System.out.println("Account b1:");
     System.out.println(b1);

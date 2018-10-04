@@ -45,7 +45,7 @@ public class BankAccount {
   }
 
   private boolean authenticate(String password) {
-    return (password == this.password);
+    return (password.equals(this.password));
   }
 
   public boolean transferTo(BankAccount other, double amount, String password) {
