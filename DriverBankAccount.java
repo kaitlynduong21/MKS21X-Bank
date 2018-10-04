@@ -9,6 +9,43 @@ public class DriverBankAccount{
     System.out.println(b2);
     System.out.println();
 
+    if (b1.transferTo(b2, 500, "abc123")) {
+        System.out.println("Transfer success!");
+      } else {
+        System.out.println("Transfer failure");
+      }
+
+    System.out.println("Account b1:");
+    System.out.println(b1);
+    System.out.println("Account b2:");
+    System.out.println(b2);
+    System.out.println();
+
+    if (b2.transferTo(b1, 500, "abcasdg23")) {
+        System.out.println("Transfer success!");
+      } else {
+        System.out.println("Transfer failure");
+      }
+
+    if (b2.transferTo(b1, 5000, "abcasdg23")) {
+        System.out.println("Transfer success!");
+      } else {
+        System.out.println("Transfer failure");
+      }
+
+    if (b1.transferTo(b2, 500, "abc")) {
+        System.out.println("Transfer success!");
+      } else {
+        System.out.println("Transfer failure");
+      }
+    System.out.println();
+
+    System.out.println("Account b1:");
+    System.out.println(b1);
+    System.out.println("Account b2:");
+    System.out.println(b2);
+    System.out.println();
+
 
     double cashAmount = 300.0;
     while(cashAmount < 3000){
@@ -32,6 +69,7 @@ public class DriverBankAccount{
       System.out.println(b2);
       System.out.println();
       cashAmount *= 2;
+
     }
   }
 }
